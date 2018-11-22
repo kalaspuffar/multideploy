@@ -5,67 +5,97 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="00: default_platform" time="0.003136328">
+      <testcase classname="fastlane.lanes" name="00: default_platform" time="0.002594141">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="01: Switch to android blueberry lane" time="0.000605915">
+      <testcase classname="fastlane.lanes" name="01: gradle" time="1.083273337">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="02: gradle" time="0.981949008">
+      <testcase classname="fastlane.lanes" name="02: gradle" time="3.653297954">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="03: gradle" time="5.233328185">
+      <testcase classname="fastlane.lanes" name="03: gradle" time="3.39519531">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="04: supply" time="7.741196293">
+      <testcase classname="fastlane.lanes" name="04: gradle" time="6.467180497">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="05: Switch to android strawberry lane" time="0.002133908">
+      <testcase classname="fastlane.lanes" name="05: capture_android_screenshots" time="10.913022429">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="06: gradle" time="0.942653711">
+      <testcase classname="fastlane.lanes" name="06: supply" time="16.94357855">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="07: gradle" time="5.14054919">
+      <testcase classname="fastlane.lanes" name="07: gradle" time="1.077701988">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="08: supply" time="9.668023756">
+      <testcase classname="fastlane.lanes" name="08: gradle" time="4.543385538">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="09: Switch to android raspberry lane" time="0.001956822">
+      <testcase classname="fastlane.lanes" name="09: gradle" time="3.199627879">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="10: gradle" time="0.943127663">
+      <testcase classname="fastlane.lanes" name="10: gradle" time="5.850055719">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="11: gradle" time="4.851331521">
+      <testcase classname="fastlane.lanes" name="11: capture_android_screenshots" time="11.193810408">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="12: supply" time="7.237776386">
+      <testcase classname="fastlane.lanes" name="12: supply" time="16.629454673">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="13: gradle" time="1.07645539">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="14: gradle" time="3.553798882">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="15: gradle" time="3.084003913">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="16: gradle" time="6.000752141">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="17: capture_android_screenshots" time="12.301528875">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="18: supply" time="16.474952599">
         
       </testcase>
     

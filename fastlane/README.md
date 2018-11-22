@@ -36,21 +36,6 @@ Deploy a new version to the Google Play
 fastlane android fetchMetadata
 ```
 Fetch all metadata of apps
-### android blueberry
-```
-fastlane android blueberry
-```
-deploy each flavor
-### android raspberry
-```
-fastlane android raspberry
-```
-deploy each flavor
-### android strawberry
-```
-fastlane android strawberry
-```
-deploy each flavor
 ### android playstore
 ```
 fastlane android playstore

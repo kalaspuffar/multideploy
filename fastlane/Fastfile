@@ -15,6 +15,8 @@
 
 default_platform(:android)
 
+flavors = ["blueberry", "strawberry", "raspberry"]
+
 platform :android do
   desc "Runs all the tests"
   lane :test do
@@ -38,60 +40,39 @@ platform :android do
 
   desc "Fetch all metadata of apps"
   lane :fetchMetadata do
-    sh("fastlane supply init --metadata_path ./fastlane/metadata/strawberry --package_name org.ea.multideploy.strawberry")
-    sh("fastlane supply init --metadata_path ./fastlane/metadata/raspberry --package_name org.ea.multideploy.raspberry")
-    sh("fastlane supply init --metadata_path ./fastlane/metadata/blueberry --package_name org.ea.multideploy.blueberry")
+    flavors.each { |flavor|
+        sh("fastlane supply init --metadata_path ./fastlane/metadata/" + flavor + " --package_name org.ea.multideploy." + flavor)
+    }
   end
-
-    desc "deploy each flavor"
-    lane :blueberry do
-        gradle(task: "clean")
-        gradle(
-            task: 'assembleblueberry',
-            build_type: 'Release'
-        )
-        supply(
-            track: 'internal',
-            json_key: '/home/danielp/google-play-api.json',
-            package_name: 'org.ea.multideploy.blueberry',
-            apk: "./app/build/outputs/apk/blueberry/release/app-blueberry-release.apk"
-        )
-    end
-
-    desc "deploy each flavor"
-    lane :raspberry do
-        gradle(task: "clean")
-        gradle(
-            task: 'assembleraspberry',
-            build_type: 'Release'
-        )
-        supply(
-            track: 'internal',
-            json_key: '/home/danielp/google-play-api.json',
-            package_name: 'org.ea.multideploy.raspberry',
-            apk: "./app/build/outputs/apk/raspberry/release/app-raspberry-release.apk"
-        )
-    end
-
-    desc "deploy each flavor"
-    lane :strawberry do
-        gradle(task: "clean")
-        gradle(
-            task: 'assemblestrawberry',
-            build_type: 'Release'
-        )
-        supply(
-            track: 'internal',
-            json_key: '/home/danielp/google-play-api.json',
-            package_name: 'org.ea.multideploy.strawberry',
-            apk: "./app/build/outputs/apk/strawberry/release/app-strawberry-release.apk"
-        )
-    end
 
     desc "Upload to playstore"
     lane :playstore do
-        blueberry
-        strawberry
-        raspberry
+        flavors.each { |flavor|
+            gradle(task: "clean")
+            gradle(
+                task: 'assemble' + flavor,
+                build_type: 'Debug'
+            )
+            gradle(
+                task: 'assemble' + flavor,
+                build_type: 'DebugAndroidTest'
+            )
+            gradle(
+                task: 'assemble' + flavor,
+                build_type: 'Release'
+            )
+            capture_android_screenshots(
+                app_package_name: 'org.ea.multideploy.' + flavor,
+                clear_previous_screenshots: true,
+                app_apk_path: "app/build/outputs/apk/" + flavor + "/debug/app-" + flavor + "-debug.apk",
+                tests_apk_path: "app/build/outputs/apk/androidTest/" + flavor + "/debug/app-" + flavor + "-debug-androidTest.apk"
+            )
+            supply(
+                track: 'internal',
+                json_key: '/home/danielp/google-play-api.json',
+                package_name: 'org.ea.multideploy.' + flavor,
+                apk: "./app/build/outputs/apk/" + flavor + "/release/app-" + flavor + "-release.apk"
+            )
+        }
     end
 end
