@@ -15,6 +15,5 @@ deploy_google_play:
   script:
     - fastlane playstore
   tags:
-    - android
   only:
      - master
