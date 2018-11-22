@@ -1,0 +1,20 @@
+stages:
+  - deploy_google_play
+
+variables:
+  LC_ALL: "en_US.UTF-8"
+  LANG: "en_US.UTF-8"
+
+before_script:
+  - gem install bundler
+  - bundle install
+
+deploy_google_play:
+  dependencies: []
+  stage: deploy_google_play
+  script:
+    - fastlane playstore
+  tags:
+    - android
+  only:
+     - master

@@ -1,0 +1,94 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  desc "Runs all the tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "Submit a new Beta Build to Crashlytics Beta"
+  lane :beta do
+    gradle(task: "clean assembleRelease")
+    crashlytics
+  
+    # sh "your_script.sh"
+    # You can also use other beta testing services here
+  end
+
+  desc "Deploy a new version to the Google Play"
+  lane :deploy do
+    gradle(task: "clean assembleRelease")
+    upload_to_play_store
+  end
+
+  desc "Fetch all metadata of apps"
+  lane :fetchMetadata do
+    sh("fastlane supply init --metadata_path ./fastlane/metadata/strawberry --package_name org.ea.multideploy.strawberry")
+    sh("fastlane supply init --metadata_path ./fastlane/metadata/raspberry --package_name org.ea.multideploy.raspberry")
+    sh("fastlane supply init --metadata_path ./fastlane/metadata/blueberry --package_name org.ea.multideploy.blueberry")
+  end
+
+    desc "deploy each flavor"
+    lane :blueberry do
+        gradle(task: "clean")
+        gradle(
+            task: 'assembleblueberry',
+            build_type: 'Release'
+        )
+        supply(
+            track: 'internal',
+            package_name: 'org.ea.multideploy.blueberry',
+            apk: "./app/build/outputs/apk/blueberry/release/app-blueberry-release.apk"
+        )
+    end
+
+    desc "deploy each flavor"
+    lane :raspberry do
+        gradle(task: "clean")
+        gradle(
+            task: 'assembleraspberry',
+            build_type: 'Release'
+        )
+        supply(
+            track: 'internal',
+            package_name: 'org.ea.multideploy.raspberry',
+            apk: "./app/build/outputs/apk/raspberry/release/app-raspberry-release.apk"
+        )
+    end
+
+    desc "deploy each flavor"
+    lane :strawberry do
+        gradle(task: "clean")
+        gradle(
+            task: 'assemblestrawberry',
+            build_type: 'Release'
+        )
+        supply(
+            track: 'internal',
+            package_name: 'org.ea.multideploy.strawberry',
+            apk: "./app/build/outputs/apk/strawberry/release/app-strawberry-release.apk"
+        )
+    end
+
+    desc "Upload to playstore"
+    lane :playstore do
+        blueberry
+        strawberry
+        raspberry
+    end
+end
