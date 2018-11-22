@@ -52,6 +52,7 @@ platform :android do
         )
         supply(
             track: 'internal',
+            json_key: '/home/danielp/google-play-api.json',
             package_name: 'org.ea.multideploy.blueberry',
             apk: "./app/build/outputs/apk/blueberry/release/app-blueberry-release.apk"
         )
@@ -66,6 +67,7 @@ platform :android do
         )
         supply(
             track: 'internal',
+            json_key: '/home/danielp/google-play-api.json',
             package_name: 'org.ea.multideploy.raspberry',
             apk: "./app/build/outputs/apk/raspberry/release/app-raspberry-release.apk"
         )
@@ -80,6 +82,7 @@ platform :android do
         )
         supply(
             track: 'internal',
+            json_key: '/home/danielp/google-play-api.json',
             package_name: 'org.ea.multideploy.strawberry',
             apk: "./app/build/outputs/apk/strawberry/release/app-strawberry-release.apk"
         )
