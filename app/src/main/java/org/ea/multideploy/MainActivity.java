@@ -20,10 +20,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         TextView helloMsg = findViewById(R.id.hello_message);
         helloMsg.setText(getString(R.string.hello_world, BuildConfig.VERSION_NAME));
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

@@ -7,8 +7,8 @@ android {
         applicationId "org.ea.multideploy"
         minSdkVersion 18
         targetSdkVersion 28
-        versionCode 16
-        versionName "0.0.16"
+        versionCode 17
+        versionName "0.0.17"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -28,21 +28,21 @@ android {
     signingConfigs {
 
         blueberry {
-            storeFile file("/home/danielp/multideploy.jks")
+            storeFile file("c:/tools/multideploy.jks")
             storePassword "test123"
             keyAlias "blueberry"
             keyPassword "test123"
         }
 
         strawberry {
-            storeFile file("/home/danielp/multideploy.jks")
+            storeFile file("c:/tools/multideploy.jks")
             storePassword "test123"
             keyAlias "strawberry"
             keyPassword "test123"
         }
 
         raspberry {
-            storeFile file("/home/danielp/multideploy.jks")
+            storeFile file("c:/tools/multideploy.jks")
             storePassword "test123"
             keyAlias "raspberry"
             keyPassword "test123"
