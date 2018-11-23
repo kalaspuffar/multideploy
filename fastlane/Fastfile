@@ -41,13 +41,14 @@ platform :android do
   desc "Fetch all metadata of apps"
   lane :fetchMetadata do
     flavors.each { |flavor|
-        sh("fastlane supply init --metadata_path ./fastlane/metadata/" + flavor + " --package_name org.ea.multideploy." + flavor)
+        sh("fastlane supply init --json_key /home/danielp/google-play-api.json --metadata_path ./metadata/" + flavor + " --package_name org.ea.multideploy." + flavor)
     }
   end
 
     desc "Upload to playstore"
     lane :playstore do
         flavors.each { |flavor|
+            sh("cp ./metadata/changelogs/* ./metadata/" + flavor + "/en-US/changelogs/")
             gradle(task: "clean")
             gradle(
                 task: 'assemble' + flavor,
@@ -64,6 +65,7 @@ platform :android do
             capture_android_screenshots(
                 app_package_name: 'org.ea.multideploy.' + flavor,
                 clear_previous_screenshots: true,
+                output_directory: 'fastlane/metadata/' + flavor,
                 app_apk_path: "app/build/outputs/apk/" + flavor + "/debug/app-" + flavor + "-debug.apk",
                 tests_apk_path: "app/build/outputs/apk/androidTest/" + flavor + "/debug/app-" + flavor + "-debug-androidTest.apk"
             )
@@ -71,6 +73,7 @@ platform :android do
                 track: 'internal',
                 json_key: '/home/danielp/google-play-api.json',
                 package_name: 'org.ea.multideploy.' + flavor,
+                metadata_path: 'fastlane/metadata/' + flavor,
                 apk: "./app/build/outputs/apk/" + flavor + "/release/app-" + flavor + "-release.apk"
             )
         }

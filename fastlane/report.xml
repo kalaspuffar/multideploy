@@ -5,97 +5,112 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="00: default_platform" time="0.002594141">
+      <testcase classname="fastlane.lanes" name="00: default_platform" time="0.002082624">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="01: gradle" time="1.083273337">
+      <testcase classname="fastlane.lanes" name="01: cp ./metadata/changelogs/* ./metadata/blueberry/en-US/changelogs/" time="0.002359938">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="02: gradle" time="3.653297954">
+      <testcase classname="fastlane.lanes" name="02: gradle" time="1.08758804">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="03: gradle" time="3.39519531">
+      <testcase classname="fastlane.lanes" name="03: gradle" time="3.210269378">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="04: gradle" time="6.467180497">
+      <testcase classname="fastlane.lanes" name="04: gradle" time="2.81357358">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="05: capture_android_screenshots" time="10.913022429">
+      <testcase classname="fastlane.lanes" name="05: gradle" time="5.995742917">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="06: supply" time="16.94357855">
+      <testcase classname="fastlane.lanes" name="06: capture_android_screenshots" time="12.055555424">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="07: gradle" time="1.077701988">
+      <testcase classname="fastlane.lanes" name="07: supply" time="23.52692281">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="08: gradle" time="4.543385538">
+      <testcase classname="fastlane.lanes" name="08: cp ./metadata/changelogs/* ./metadata/strawberry/en-US/changelogs/" time="0.014359495">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="09: gradle" time="3.199627879">
+      <testcase classname="fastlane.lanes" name="09: gradle" time="0.945157472">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="10: gradle" time="5.850055719">
+      <testcase classname="fastlane.lanes" name="10: gradle" time="2.967519274">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="11: capture_android_screenshots" time="11.193810408">
+      <testcase classname="fastlane.lanes" name="11: gradle" time="2.695910456">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="12: supply" time="16.629454673">
+      <testcase classname="fastlane.lanes" name="12: gradle" time="5.37812876">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="13: gradle" time="1.07645539">
+      <testcase classname="fastlane.lanes" name="13: capture_android_screenshots" time="11.302804149">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="14: gradle" time="3.553798882">
+      <testcase classname="fastlane.lanes" name="14: supply" time="23.752045065">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="15: gradle" time="3.084003913">
+      <testcase classname="fastlane.lanes" name="15: cp ./metadata/changelogs/* ./metadata/raspberry/en-US/changelogs/" time="0.010559336">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="16: gradle" time="6.000752141">
+      <testcase classname="fastlane.lanes" name="16: gradle" time="0.949925727">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="17: capture_android_screenshots" time="12.301528875">
+      <testcase classname="fastlane.lanes" name="17: gradle" time="3.030152625">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="18: supply" time="16.474952599">
+      <testcase classname="fastlane.lanes" name="18: gradle" time="2.661898054">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="19: gradle" time="5.171077449">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="20: capture_android_screenshots" time="13.299576186">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="21: supply" time="22.988762487">
         
       </testcase>
     
